@@ -1,0 +1,27 @@
+<% include ./partials/header%>
+<% include ./partials/navbar%>
+
+
+
+<h1>Here all the messages</h1>
+<ul>
+    <%if (allmessages.length > 0) { %>
+    <% for(let onemessage of allmessages) { %>
+    <li class="list-group-item list-group-item-light">
+        Title:
+        <%=onemessage.title%>
+    </li>
+    <li class="list-group-item list-group-item-info">
+        Message:
+        <%=onemessage.body%>
+    </li>
+    <br><br>
+
+    <% } %>
+    <% } %>
+
+    <%if (allmessages.length == 0) { %>
+    <h2>No Messages found</h2>
+    <% } %>
+</ul>
+<% include ./partials/footer%>
